@@ -70,4 +70,37 @@ nav {
   font-size: 2em;
   border-bottom: 4px solid #fff; }
 
+.wrap {
+  background: #eee;
+  max-width: 940px;
+  margin: 0 auto; }
+  .wrap ul {
+    list-style: none;
+    padding: 0; }
+  .wrap li {
+    display: flex;
+    padding: 1rem; }
+    .wrap li img {
+      width: 30%;
+      height: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      margin-right: 1rem; }
+    .wrap li h1 {
+      font-family: lobster;
+      margin-top: 0; }
+      .wrap li h1 a {
+        color: #666;
+        text-decoration: none; }
+
+.highlight {
+  transition: all 0.2s;
+  position: absolute;
+  top: 0;
+  background: rgba(255, 255, 255, 0.2);
+  left: 0;
+  z-index: 1;
+  display: block;
+  pointer-events: none; }
+
 /*# sourceMappingURL=styles.css.map */
