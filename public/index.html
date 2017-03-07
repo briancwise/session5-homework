@@ -3,30 +3,62 @@
 <head>
   <meta charset="UTF-8">
   <title>Recipes</title>
+  <script src="https://code.angularjs.org/1.6.2/angular.min.js"></script>
+  <script src="https://code.angularjs.org/1.6.2/angular-route.js"></script>
+  <script src="js/foodapp.module.js"></script>
+  <script src="js/foodapp.config.js"></script>
+  <script src="js/recipes/recipe-list.component.js"></script>
+  <script src="js/reviews/review-list.component.js"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css"> 
+  <base href="/">
 </head>
-<body>
+<body ng-app="foodApp">
 
   <nav>
     <div class="panels">
-      <div class="panel panel1">
-        <a href="#0">Home</a>
+      <div class="panel panel1 active">
+        <a href="/">Home</a>
       </div>
-      <div class="panel panel2 active">
-        <a href="#0">Recipes</a>
+      <div class="panel panel2">
+        <a href="/recipes">Recipes</a>
       </div>
       <div class="panel panel3">
-        <a href="#0">Reviews</a>
+        <a href="/reviews">Reviews</a>
       </div>
       <div class="panel panel4">
-        <a href="#0">Delivery</a>
+        <a href="/delivery">Delivery</a>
       </div>
       <div class="panel panel5">
-        <a href="#0">About</a>
+        <a href="/about">About</a>
       </div>
     </div>
   </nav>
+
+  <div>
+  <div ng-view></div>
+  </div>
+
+  <div>
+  <recipe-list></recipe-list>
+</div>
+
+<ul>
+    <li>
+        <p>
+            Search: <input ng-model="$ctrl.query" />
+        </p>
+        <p>
+            Sort by:
+            <select ng-model="$ctrl.orderProp">
+                <option value="title">Alphabetical</option>
+                <option value="date">Newest</option>
+            </select>
+        </p>
+    </li>
+</ul>
+
 
   <script src="js/scripts.js"></script>
 
